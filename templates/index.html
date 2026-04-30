@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>LovePredict AI — Collecte</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    height:100vh;
+    background: linear-gradient(135deg,#1e0033,#3a0d5c,#5f0f8b);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+}
+
+.container{
+    width:420px;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(18px);
+    border-radius:20px;
+    padding:35px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+}
+
+h1{
+    text-align:center;
+    font-weight:600;
+    margin-bottom:8px;
+}
+
+p{
+    text-align:center;
+    font-size:13px;
+    opacity:0.8;
+    margin-bottom:25px;
+}
+
+label{
+    font-size:14px;
+    margin-top:15px;
+    display:block;
+}
+
+input{
+    width:100%;
+    padding:10px;
+    border-radius:8px;
+    border:none;
+    margin-top:6px;
+    outline:none;
+    font-size:14px;
+}
+
+input:focus{
+    box-shadow:0 0 8px #ff4da6;
+}
+
+button{
+    margin-top:25px;
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    background: linear-gradient(90deg,#ff4da6,#ff0080);
+    color:white;
+    font-weight:600;
+    font-size:15px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.04);
+}
+
+.footer{
+    text-align:center;
+    margin-top:18px;
+    font-size:12px;
+    opacity:0.6;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>💗 LovePredict AI</h1>
+    <p>Collecte intelligente pour analyse de données relationnelles</p>
+
+    <form action="{{ url_for('submit') }}" method="POST">
+
+        <label>💬 Communication (1 à 10)</label>
+        <input type="number" name="communication" min="1" max="10" required>
+
+        <label>📱 Usage du téléphone (1 à 10)</label>
+        <input type="number" name="telephone" min="1" max="10" required>
+
+        <label>😴 Qualité du sommeil (1 à 10)</label>
+        <input type="number" name="sommeil" min="1" max="10" required>
+
+        <label>💢 Nombre de conflits par semaine (0 à 10)</label>
+        <input type="number" name="conflits" min="0" max="10" required>
+
+        <button type="submit">Analyser et voir le Dashboard</button>
+    </form>
+
+    <div class="footer">
+        Projet INF232 — Analyse de données
+    </div>
+</div>
+
+</body>
+</html>
